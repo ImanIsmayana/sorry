@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Maafin aa ❤️</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #090b1a;
+        color: #fff;
+        overflow-x: hidden;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle, #fff 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.15;
+        animation: stars 80s linear infinite;
+        z-index: -2;
+      }
+      @keyframes stars {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-800px);
+        }
+      }
+      .hero {
+        min-height: 100vh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        transition: 1s;
+      }
+      .card {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 25px;
+        border-radius: 20px;
+        max-width: 700px;
+      }
+      h1 {
+        margin: 0 0 10px;
+      }
+      .subtitle {
+        opacity: 0.85;
+      }
+      .gallery {
+        margin: 40px auto;
+        width: min(900px, 95vw);
+        overflow: hidden;
+      }
+      .track {
+        display: flex;
+        gap: 20px;
+        animation: slide 25s linear infinite;
+      }
+      .track img {
+        width: 240px;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: 0.3s;
+      }
+      .track img:hover {
+        transform: scale(1.05);
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-260px * 4));
+        }
+      }
+      button {
+        padding: 14px 28px;
+        border: none;
+        border-radius: 999px;
+        background: #ff4f8b;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .photo {
+        width: 45%;
+      }
+
+      .photo img {
+        width: 100%;
+        border-radius: 20px;
+        transition: 0.8s;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .story {
+        width: 55%;
+      }
+
+      .story h2 {
+        color: #ffd86b;
+      }
+
+      .story p {
+        font-size: 18px;
+        line-height: 1.8;
+        min-height: 180px;
+      }
+
+      .progress {
+        margin-top: 25px;
+        color: #ccc;
+      }
+
+      .sorry-scene {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+      }
+
+      .moon-light {
+        position: absolute;
+
+        top: 80px;
+
+        right: 100px;
+
+        width: 220px;
+
+        height: 220px;
+
+        border-radius: 50%;
+
+        background: #fff8c6;
+
+        filter: blur(70px);
+
+        opacity: 0.4;
+      }
+
+      .boy {
+        position: absolute;
+
+        bottom: 12%;
+        left: -120px;
+
+        font-size: 70px;
+      }
+
+      .speech {
+        position: absolute;
+
+        left: 50%;
+        top: 18%;
+
+        transform: translateX(-50%);
+      }
+
+      .letter {
+        position: absolute;
+
+        left: 50%;
+        top: 38%;
+
+        transform: translate(-50%, -50%) scale(0.2);
+
+        font-size: 80px;
+        z-index: 20;
+
+        cursor: pointer;
+      }
+
+      .letter:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+
+      .memory-book {
+        max-width: 900px;
+        margin: 50px auto;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+
+        border-radius: 25px;
+        padding: 30px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .memory-book.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .hide {
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+      }
+
+      .show {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+      }
+
+      @media (max-width: 768px) {
+        .memory-book {
+          flex-direction: column;
+
+          text-align: center;
+        }
+
+        .photo {
+          width: 100%;
+        }
+
+        .story {
+          width: 100%;
+        }
+
+        .story p {
+          min-height: auto;
+        }
+
+        .track img {
+          width: 170px;
+
+          height: 230px;
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: translateX(-50%) scale(1);
+        }
+
+        50% {
+          transform: translateX(-50%) scale(1.05);
+        }
+
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= HERO ================= -->
+    <div id="elementHero" class="hero">
+      <div class="card">
+        <h1>Aa Minta Maaf 🥺</h1>
+
+        <p class="subtitle">
+          Maaf aa selalu bikin ayang kecewa. Izinkan aa memperbaikinya sedikit
+          demi sedikit.
+        </p>
+
+        <button onclick="start()">Masuk ❤️</button>
+      </div>
+
+      <div class="gallery">
+        <div class="track">
+          <img src="img/1.jpeg" />
+          <img src="img/2.jpeg" />
+          <img src="img/3.jpeg" />
+          <img src="img/4.jpeg" />
+          <img src="img/5.jpeg" />
+          <img src="img/6.jpeg" />
+          <img src="img/7.jpeg" />
+          <img src="img/8.jpeg" />
+
+          <!-- duplicate supaya slider mulus -->
+          <img src="img/1.jpeg" />
+          <img src="img/2.jpeg" />
+          <img src="img/3.jpeg" />
+          <img src="img/4.jpeg" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SCENE ================= -->
+
+    <div id="sorryScene" class="sorry-scene hide">
+      <div class="moon-light"></div>
+
+      <div id="boy" class="boy">🧍🏻‍♂️🌹</div>
+
+      <div id="speech" class="speech hide">🥺 Maafin aa ya...</div>
+
+      <div id="letter" class="letter hide" onclick="openLetter()">💌</div>
+    </div>
+
+    <!-- ================= MEMORY ================= -->
+
+    <div id="memoryBook" class="memory-book">
+      <div class="photo">
+        <img id="memoryImage" src="img/1.jpeg" alt="Kenangan" />
+      </div>
+
+      <div class="story">
+        <h2 id="memoryTitle">❤️</h2>
+
+        <p id="memoryText">
+          Masih ingat hari ini?
+
+          <br /><br />
+
+          Mungkin buat orang lain ini hanya foto biasa. Tapi buat aku... hari
+          itu adalah awal aku mengenal seseorang yang sekarang sangat berarti.
+        </p>
+
+        <div class="progress">
+          <span id="pageNumber"> 1 / 8 </span>
+        </div>
+      </div>
+    </div>
+
+    <audio id="music" loop preload="auto">
+      <source src="1.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      let current = 0;
+      let memoryInterval = null;
+      function start() {
+        const hero = document.getElementById("elementHero");
+        const scene = document.getElementById("sorryScene");
+
+        document
+          .getElementById("music")
+          .play()
+          .catch(() => {});
+
+        hero.classList.add("hide");
+
+        setTimeout(() => {
+          hero.style.display = "none";
+
+          window.scrollTo({
+            top: 0,
+            behavior: "instant",
+          });
+
+          scene.classList.remove("hide");
+          scene.classList.add("show");
+
+          playScene();
+        }, 800);
+      }
+
+      function playScene() {
+        const boy = document.getElementById("boy");
+        const speech = document.getElementById("speech");
+        const letter = document.getElementById("letter");
+
+        let pos = -150;
+
+        const walk = setInterval(() => {
+          pos += 4;
+          boy.style.left = pos + "px";
+
+          if (pos >= window.innerWidth / 2 - 80) {
+            clearInterval(walk);
+
+            speech.classList.remove("hide");
+            speech.classList.add("show");
+
+            speech.innerHTML = "🥺 Maafin aa ya...";
+
+            setTimeout(() => {
+              speech.innerHTML = "🌹 Ini buat ayang...";
+            }, 2000);
+
+            setTimeout(() => {
+              speech.innerHTML = "💌 Aa punya sesuatu...";
+            }, 4500);
+
+            setTimeout(() => {
+              speech.classList.remove("show");
+              speech.classList.add("hide");
+
+              letter.classList.remove("hide");
+              letter.classList.add("show");
+
+              letter.animate(
+                [
+                  { transform: "translateX(-50%) scale(.2)" },
+                  { transform: "translateX(-50%) scale(1.2)" },
+                  { transform: "translateX(-50%) scale(1)" },
+                ],
+                {
+                  duration: 700,
+                  fill: "forwards",
+                },
+              );
+            }, 7000);
+          }
+        }, 20);
+      }
+
+      function openLetter() {
+        const letter = document.getElementById("letter");
+        const scene = document.getElementById("sorryScene");
+        const memory = document.getElementById("memoryBook");
+
+        letter.style.pointerEvents = "none";
+
+        letter.animate(
+          [
+            { transform: "translateX(-50%) scale(1)" },
+            { transform: "translateX(-50%) scale(1.3) rotate(-10deg)" },
+            { transform: "translateX(-50%) scale(0)", opacity: 0 },
+          ],
+          {
+            duration: 700,
+            fill: "forwards",
+          },
+        );
+
+        setTimeout(() => {
+          scene.classList.add("hide");
+
+          memory.classList.add("show");
+
+          memory.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+
+          current = 0;
+          showMemory();
+
+          if (memoryInterval) {
+            clearInterval(memoryInterval);
+          }
+
+          memoryInterval = setInterval(showMemory, 5000);
+        }, 700);
+      }
+
+      const memories = [
+        {
+          image: "img/1.jpeg",
+          title: "❤️",
+          text: "Masih ingat hari ini?\n\nMungkin buat orang lain ini hanya foto biasa.\nTapi buat aku...\nHari itu adalah awal aku mengenal seseorang yang sekarang sangat berarti.",
+        },
+
+        {
+          image: "img/2.jpeg",
+          title: "🌸",
+          text: "Kadang aku melihat foto ini lalu tersenyum sendiri.\n\nKarena aku ingat betapa bahagianya kita saat itu.",
+        },
+
+        {
+          image: "img/3.jpeg",
+          title: "🥺",
+          text: "Aku sadar...\n\nBelakangan ini aku lebih sering membuatmu kecewa.\nMaaf ya...",
+        },
+
+        {
+          image: "img/4.jpeg",
+          title: "🌙",
+          text: "Kalau saja aku bisa mengulang waktu...\nAku ingin kembali ke hari ini dan memilih untuk lebih memahami perasaanmu.",
+        },
+
+        {
+          image: "img/5.jpeg",
+          title: "💕",
+          text: "Terima kasih...\n\nKarena sudah sabar menghadapi sifatku.\nAku tahu itu tidak mudah.",
+        },
+
+        {
+          image: "img/6.jpeg",
+          title: "🌷",
+          text: "Aku mungkin belum sempurna.\n\nTapi aku ingin terus belajar menjadi yang lebih baik untukmu.",
+        },
+
+        {
+          image: "img/7.jpeg",
+          title: "💖",
+          text: "Aku nggak mau semua kenangan indah ini hilang hanya karena kesalahanku.",
+        },
+
+        {
+          image: "img/8.jpeg",
+          title: "❤️",
+          text: "Kalau kamu masih marah...\nAku mengerti.\n\nAku hanya berharap masih diberi kesempatan untuk memperbaikinya.",
+        },
+      ];
+
+      const img = document.getElementById("memoryImage");
+      const title = document.getElementById("memoryTitle");
+      const text = document.getElementById("memoryText");
+      const page = document.getElementById("pageNumber");
+
+      function showMemory() {
+        img.style.opacity = 0;
+        text.style.opacity = 0;
+
+        setTimeout(() => {
+          img.src = memories[current].image;
+
+          title.innerHTML = memories[current].title;
+
+          text.innerHTML = memories[current].text.replace(/\n/g, "<br>");
+
+          page.innerHTML = `${current + 1} / ${memories.length}`;
+
+          img.style.opacity = 1;
+          text.style.opacity = 1;
+
+          current++;
+
+          if (current >= memories.length) {
+            current = 0;
+          }
+        }, 400);
+      }
+    </script>
+  </body>
+</html>
